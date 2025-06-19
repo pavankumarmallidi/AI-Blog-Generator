@@ -52,19 +52,19 @@
 }
 
 @layer components {
-  .glow-button {
-    @apply relative overflow-hidden transition-all duration-300;
-  }
-  
-  .glow-button:hover {
-    @apply shadow-[0_0_20px_#00f0ff40,0_0_40px_#00f0ff20,0_0_60px_#00f0ff10];
+  .clean-button {
+    @apply relative overflow-hidden transition-all duration-300 shadow-md hover:shadow-lg;
   }
   
   .feature-card {
-    @apply bg-card/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 transition-all duration-300 hover:bg-card/70 hover:border-neon-blue/30 hover:shadow-[0_0_20px_#00f0ff20];
+    @apply bg-card/80 backdrop-blur-sm border border-white/20 rounded-xl p-6 transition-all duration-300 hover:bg-card/90 hover:shadow-lg hover:-translate-y-1;
   }
   
   .form-input {
-    @apply bg-card/80 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-neon-blue focus:ring-1 focus:ring-neon-blue/50 transition-all duration-200 backdrop-blur-sm;
+    @apply bg-card/80 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all duration-200 backdrop-blur-sm;
+  }
+
+  .info-card {
+    @apply bg-card/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 transition-all duration-300 hover:bg-card/80 hover:shadow-lg hover:-translate-y-1;
   }
 }
