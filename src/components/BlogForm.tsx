@@ -38,8 +38,8 @@ const BlogForm = () => {
     additionalInstructions: ''
   });
 
-  // Forbidden special characters regex
-  const forbiddenChars = /['"#$%^*{}\[\]()!`~]/g;
+  // Forbidden special characters regex (now includes @)
+  const forbiddenChars = /['"@#$%^*{}\[\]()!`~]/g;
 
   // Validate all fields for forbidden characters
   const hasForbiddenChars = (data: FormData) => {
