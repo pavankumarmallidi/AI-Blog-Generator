@@ -90,12 +90,26 @@ const BlogForm = () => {
               <div className="w-20 h-20 bg-neon-blue/20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Check className="h-10 w-10 text-neon-blue" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <h3 className="text-2xl font-bold text-white mb-6">
                 Blog Generation Started!
               </h3>
-              <p className="text-gray-300 text-lg leading-relaxed">
-                ✅ Your blog is being generated and will be emailed to you within 10 minutes.
-              </p>
+              <div className="text-gray-300 text-lg leading-relaxed space-y-3">
+                <p className="flex items-center justify-center gap-2">
+                  <span className="text-neon-blue">✅</span>
+                  Your blog request has been received and processing has begun
+                </p>
+                <p className="flex items-center justify-center gap-2">
+                  <span className="text-neon-blue">📧</span>
+                  Your SEO-optimized blog will be emailed to you within 10 minutes
+                </p>
+                <p className="flex items-center justify-center gap-2">
+                  <span className="text-neon-blue">🚀</span>
+                  Our AI is crafting content tailored to your specifications
+                </p>
+                <p className="text-sm text-gray-400 mt-4">
+                  Check your inbox (including spam folder) for your personalized blog content
+                </p>
+              </div>
               <div className="mt-8">
                 <Button 
                   onClick={() => {

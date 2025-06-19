@@ -21,7 +21,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto animate-fade-in-up">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            <span className="text-white">
               Generate Your Blog Content in{' '}
             </span>
             <span className="text-neon-blue animate-glow-pulse">Minutes</span>

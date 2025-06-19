@@ -3,7 +3,6 @@ import HeroSection from '@/components/HeroSection';
 import FeatureHighlights from '@/components/FeatureHighlights';
 import BlogForm from '@/components/BlogForm';
 import HowItWorks from '@/components/HowItWorks';
-import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
@@ -12,7 +11,6 @@ const Index = () => {
       <FeatureHighlights />
       <HowItWorks />
       <BlogForm />
-      <Footer />
     </div>
   );
 };
