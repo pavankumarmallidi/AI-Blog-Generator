@@ -94,7 +94,7 @@ const HeroSection = () => {
                   EveryAI Team
                 </p>
                 <p className="text-xs text-gray-500">
-                  Lead Developer: Pavan Kumar Mallidi
+                  Developer: Pavan Kumar Mallidi
                 </p>
               </div>
             </div>
