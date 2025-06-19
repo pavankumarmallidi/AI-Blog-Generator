@@ -38,12 +38,32 @@ const BlogForm = () => {
     additionalInstructions: ''
   });
 
+  // Forbidden special characters regex
+  const forbiddenChars = /['"#$%^*{}\[\]()!`~]/g;
+
+  // Validate all fields for forbidden characters
+  const hasForbiddenChars = (data: FormData) => {
+    return Object.entries(data).some(([key, value]) => {
+      // Allow email field to contain @ and .
+      if (key === 'email') return false;
+      return forbiddenChars.test(value);
+    });
+  };
+
   const handleInputChange = (field: keyof FormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (hasForbiddenChars(formData)) {
+      toast({
+        title: "Invalid Input",
+        description: "Please remove special characters like ' \" # $ % ^ * { } [ ] ( ) ! ` ~ from your entries.",
+        variant: "destructive",
+      });
+      return;
+    }
     setIsSubmitting(true);
 
     try {
