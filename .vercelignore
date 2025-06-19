@@ -4,5 +4,4 @@ node_modules
 *.log
 logs
 *.local
-dist
 bun.lockb 
