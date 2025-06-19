@@ -47,18 +47,38 @@ const BlogForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    try {
+      console.log('Submitting form data:', formData);
+      
+      const response = await fetch('https://pavan.every-ai.com/webhook/BlogGenerate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    console.log('Form submitted:', formData);
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    toast({
-      title: "Blog Generation Started!",
-      description: "Your SEO-optimized blog is being created and will be emailed to you shortly.",
-    });
+      if (response.ok) {
+        console.log('Form submitted successfully');
+        setIsSubmitted(true);
+        
+        toast({
+          title: "Blog Generation Started!",
+          description: "Your SEO-optimized blog is being created and will be emailed to you shortly.",
+        });
+      } else {
+        throw new Error('Failed to submit form');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Error",
+        description: "Failed to submit form. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -126,9 +146,9 @@ const BlogForm = () => {
             </CardTitle>
           </CardHeader>
           <CardContent className="p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-1">
                   <Label htmlFor="fullName" className="text-white font-medium">
                     Full Name *
                   </Label>
@@ -143,7 +163,7 @@ const BlogForm = () => {
                   />
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-1">
                   <Label htmlFor="email" className="text-white font-medium">
                     Email Address *
                   </Label>
@@ -159,7 +179,7 @@ const BlogForm = () => {
                 </div>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1">
                 <Label htmlFor="blogTopic" className="text-white font-medium">
                   Blog Topic/Title *
                 </Label>
@@ -174,7 +194,7 @@ const BlogForm = () => {
                 />
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1">
                 <Label htmlFor="description" className="text-white font-medium">
                   Brief Description or Purpose *
                 </Label>
@@ -183,13 +203,13 @@ const BlogForm = () => {
                   required
                   value={formData.description}
                   onChange={(e) => handleInputChange('description', e.target.value)}
-                  className="form-input min-h-[100px]"
+                  className="form-input min-h-[80px]"
                   placeholder="Describe what you want your blog to cover and its main purpose"
                 />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-1">
                   <Label className="text-white font-medium">
                     Writing Format *
                   </Label>
@@ -212,7 +232,7 @@ const BlogForm = () => {
                   </Select>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-1">
                   <Label className="text-white font-medium">
                     Writing Tone *
                   </Label>
@@ -235,7 +255,7 @@ const BlogForm = () => {
                 </div>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1">
                 <Label htmlFor="targetAudience" className="text-white font-medium">
                   Target Audience *
                 </Label>
@@ -250,48 +270,51 @@ const BlogForm = () => {
                 />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-1">
                   <Label htmlFor="sectionsToInclude" className="text-white font-medium">
-                    Sections to Include
+                    Sections to Include *
                   </Label>
                   <Textarea
                     id="sectionsToInclude"
+                    required
                     value={formData.sectionsToInclude}
                     onChange={(e) => handleInputChange('sectionsToInclude', e.target.value)}
-                    className="form-input"
+                    className="form-input min-h-[80px]"
                     placeholder="e.g., Introduction, Benefits, Step-by-step guide, Conclusion"
                   />
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-1">
                   <Label htmlFor="sectionsToExclude" className="text-white font-medium">
-                    Sections to Exclude
+                    Sections to Exclude *
                   </Label>
                   <Textarea
                     id="sectionsToExclude"
+                    required
                     value={formData.sectionsToExclude}
                     onChange={(e) => handleInputChange('sectionsToExclude', e.target.value)}
-                    className="form-input"
+                    className="form-input min-h-[80px]"
                     placeholder="Any sections you don't want included"
                   />
                 </div>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1">
                 <Label htmlFor="additionalInstructions" className="text-white font-medium">
-                  Additional Instructions
+                  Additional Instructions *
                 </Label>
                 <Textarea
                   id="additionalInstructions"
+                  required
                   value={formData.additionalInstructions}
                   onChange={(e) => handleInputChange('additionalInstructions', e.target.value)}
-                  className="form-input"
+                  className="form-input min-h-[80px]"
                   placeholder="Any specific requirements, keywords to include, or special instructions"
                 />
               </div>
 
-              <div className="pt-6">
+              <div className="pt-4">
                 <Button
                   type="submit"
                   disabled={isSubmitting}
