@@ -1,4 +1,3 @@
-
 import { ArrowDown, Clock, Mail, Shield, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -68,7 +67,7 @@ const HeroSection = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tl from-primary/2 via-transparent to-primary/4 animate-pulse" style={{ animationDelay: '1.8s' }}></div>
       </div>
       
-      <div className="container mx-auto px-4 text-center relative z-10">
+      <div className="container mx-auto px-4 text-center relative z-10 mt-24">
         <div className="max-w-4xl mx-auto animate-fade-in-up">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white hover:drop-shadow-[0_0_20px_rgba(0,240,255,0.3)] transition-all duration-500">
             Generate Your Blog Content in{' '}
