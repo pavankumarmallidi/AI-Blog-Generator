@@ -51,6 +51,15 @@ const BlogForm = () => {
   };
 
   const handleInputChange = (field: keyof FormData, value: string) => {
+    // Allow email field to contain @ and .
+    if (field !== 'email' && forbiddenChars.test(value)) {
+      toast({
+        title: "Special Characters Not Allowed",
+        description: "Please avoid using ' \" # $ % ^ * { } [ ] ( ) ! ` ~ in your input.",
+        variant: "destructive",
+      });
+      return;
+    }
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
