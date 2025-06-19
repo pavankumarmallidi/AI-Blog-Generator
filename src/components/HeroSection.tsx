@@ -83,14 +83,21 @@ const HeroSection = () => {
             <ArrowDown className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform duration-200" />
           </Button>
           
-          {/* Developer Credit */}
+          {/* Professional Team Credit */}
           <div className="mt-16 text-center">
-            <p className="text-sm text-gray-500">
-              Developed by{' '}
-              <span className="text-primary font-medium hover:drop-shadow-[0_0_8px_rgba(0,240,255,0.5)] transition-all duration-300">Pavan Kumar Mallidi</span>
-              {' '}in team{' '}
-              <span className="text-primary font-medium hover:drop-shadow-[0_0_8px_rgba(0,240,255,0.5)] transition-all duration-300">EveryAI</span>
-            </p>
+            <div className="bg-card/20 backdrop-blur-sm border border-white/10 rounded-lg p-6 max-w-md mx-auto hover:bg-card/30 transition-all duration-300 hover:border-primary/20">
+              <p className="text-sm text-gray-400 mb-2">
+                Built with excellence by
+              </p>
+              <div className="space-y-1">
+                <p className="text-primary font-semibold hover:drop-shadow-[0_0_8px_rgba(0,240,255,0.5)] transition-all duration-300">
+                  EveryAI Team
+                </p>
+                <p className="text-xs text-gray-500">
+                  Lead Developer: Pavan Kumar Mallidi
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
