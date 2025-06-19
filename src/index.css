@@ -80,3 +80,31 @@
 .animation-delay-3000 {
   animation-delay: 3s;
 }
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 12px;
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00f0ff;
+  border-radius: 8px;
+  border: 2px solid hsl(var(--background));
+  box-shadow: 0 0 8px #00f0ff55;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00c0cc;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+  border-radius: 8px;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #00f0ff hsl(var(--background));
+}
