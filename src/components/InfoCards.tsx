@@ -1,4 +1,3 @@
-
 import { Users, Star, Zap, Target } from 'lucide-react';
 
 const InfoCards = () => {
@@ -34,7 +33,7 @@ const InfoCards = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Why Choose Our AI Blog Generator?
+            Our Impact
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Join thousands of content creators who trust our platform for their blogging needs
