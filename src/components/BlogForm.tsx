@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -63,7 +62,7 @@ const BlogForm = () => {
         setIsSubmitted(true);
         
         toast({
-          title: "Blog Generation Started!",
+          title: "Blog Generation Started",
           description: "Your SEO-optimized blog is being created and will be emailed to you shortly.",
         });
       } else {
@@ -91,23 +90,20 @@ const BlogForm = () => {
                 <Check className="h-10 w-10 text-neon-blue" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-6">
-                Blog Generation Started!
+                Blog Generation Request Received Successfully
               </h3>
-              <div className="text-gray-300 text-lg leading-relaxed space-y-3">
-                <p className="flex items-center justify-center gap-2">
-                  <span className="text-neon-blue">✅</span>
-                  Your blog request has been received and processing has begun
+              <div className="text-gray-300 text-lg leading-relaxed space-y-4">
+                <p>
+                  Thank you for your submission. Your blog request has been received and is currently being processed by our AI system.
                 </p>
-                <p className="flex items-center justify-center gap-2">
-                  <span className="text-neon-blue">📧</span>
-                  Your SEO-optimized blog will be emailed to you within 10 minutes
+                <p>
+                  Your personalized, SEO-optimized blog content will be delivered to your email address within the next 10 minutes.
                 </p>
-                <p className="flex items-center justify-center gap-2">
-                  <span className="text-neon-blue">🚀</span>
-                  Our AI is crafting content tailored to your specifications
+                <p>
+                  Our advanced AI technology is now crafting high-quality content tailored specifically to your requirements and target audience.
                 </p>
                 <p className="text-sm text-gray-400 mt-4">
-                  Check your inbox (including spam folder) for your personalized blog content
+                  Please check your inbox, including your spam folder, for the completed blog content.
                 </p>
               </div>
               <div className="mt-8">
