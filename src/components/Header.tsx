@@ -26,7 +26,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h2 className="text-xl font-bold text-white">AI Blog Generator</h2>
+            <h2 className="text-xl font-bold text-white hover:text-primary transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(0,240,255,0.5)]">EveryAI</h2>
           </div>
 
           {/* Desktop Menu */}
@@ -35,7 +35,7 @@ const Header = () => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+                className="text-gray-300 hover:text-white transition-all duration-300 font-medium hover:drop-shadow-[0_0_8px_rgba(0,240,255,0.4)] hover:scale-105"
               >
                 {item.name}
               </button>
@@ -45,7 +45,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-white p-2"
+            className="md:hidden text-white p-2 hover:text-primary transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(0,240,255,0.5)]"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -59,7 +59,7 @@ const Header = () => {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-gray-300 hover:text-white transition-colors duration-200 font-medium text-left"
+                  className="text-gray-300 hover:text-white transition-all duration-300 font-medium text-left hover:drop-shadow-[0_0_8px_rgba(0,240,255,0.4)]"
                 >
                   {item.name}
                 </button>

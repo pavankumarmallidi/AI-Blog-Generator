@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -57,14 +56,27 @@
   }
   
   .feature-card {
-    @apply bg-card/80 backdrop-blur-sm border border-white/20 rounded-xl p-6 transition-all duration-300 hover:bg-card/90 hover:shadow-lg hover:-translate-y-1;
+    @apply bg-card/80 backdrop-blur-sm border border-white/20 rounded-xl p-6 transition-all duration-300 hover:bg-card/90 hover:shadow-lg hover:-translate-y-1 hover:shadow-primary/20 hover:border-primary/30 hover:drop-shadow-[0_0_15px_rgba(0,240,255,0.2)];
   }
   
   .form-input {
-    @apply bg-card/80 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all duration-200 backdrop-blur-sm;
+    @apply bg-card/80 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all duration-200 backdrop-blur-sm hover:border-primary/50 hover:drop-shadow-[0_0_8px_rgba(0,240,255,0.3)];
   }
 
   .info-card {
     @apply bg-card/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 transition-all duration-300 hover:bg-card/80 hover:shadow-lg hover:-translate-y-1;
   }
+}
+
+/* Animation delay utilities */
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-3000 {
+  animation-delay: 3s;
 }
